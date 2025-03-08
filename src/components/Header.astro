@@ -2,6 +2,7 @@
 import { GLOBAL } from "../lib/variables";
 import Anchor from "./common/Anchor.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+//import LanguageToggle from "./LanguageToggle.astro";
 ---
 
 <header
@@ -32,7 +33,7 @@ import ThemeToggle from "./ThemeToggle.astro";
       <Anchor url={i[1]}>{i[0]}</Anchor>
     ))}
     </div>
-    <div class="flex gap-4 justify-between px-4 sm:px-0">
+    <div class="flex gap-3 justify-around px-4 sm:px-0">
       {GLOBAL.githubProfile && (<Anchor url={GLOBAL.githubProfile} aria-label="Zaggonaut GitHub Repository">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +48,7 @@ import ThemeToggle from "./ThemeToggle.astro";
         </svg>
       </Anchor>)}
       <ThemeToggle />
+      <!-- <LanguageToggle /> -->
     </div>
   </nav>
 </header>

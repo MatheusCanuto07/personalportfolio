@@ -1,0 +1,46 @@
+<div class="border-none bg-none focus:outline-2 focus:outline-offset-2 focus:outline-zag-dark dark:focus:outline-zag-light" id="languageToggle" aria-label="Language Toggle">
+
+  <details id="dropdownId" class="dropdown">
+    <summary class="cursor-pointer m-1">
+      <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+        <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+      </svg>
+    </summary>
+    <ul class="menu dropdown-content rounded-box z-10 w-52 p-2 shadow-sm absolute cursor-pointer">
+      <li id="toggle_en" class="hover:bg-white w-full"><a>EN</a></li>
+      <li id="toggle_br" class="hover:bg-white w-full "><a>PT-BR</a></li>
+    </ul>
+  </details> 
+
+</div>
+
+<style>
+  summary {
+  list-style: none; /* Remove o marcador padrão */
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Remove o ícone padrão no Chrome/Safari */
+}
+</style>
+
+<script>
+  const toggle_en = document.getElementById('toggle_en');
+  const toggle_br = document.getElementById('toggle_br');
+  const dropdown = document.getElementById('dropdownId');
+
+  function fechaDrop(){
+    dropdown?.removeAttribute('open');
+  }
+
+  toggle_en?.addEventListener('click', function() {
+    window.localStorage.setItem("language", "english");
+    fechaDrop();
+  });
+
+  toggle_br?.addEventListener('click', function() {
+    window.localStorage.setItem("language", "portugues");
+    fechaDrop();
+  }); 
+
+</script>
